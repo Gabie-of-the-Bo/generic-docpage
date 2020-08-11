@@ -1,7 +1,12 @@
 [
     {
         "type": "title",
-        "content": "Basic documentation framework"
+        "content": "This is a title"
+    },
+
+    {
+        "type": "subtitle",
+        "content": "This is a subtitle"
     },
 
     {
