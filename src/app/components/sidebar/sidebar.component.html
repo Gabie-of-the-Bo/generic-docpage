@@ -6,7 +6,6 @@
         <div *ngFor="let section of sections">
             <div class="section" (click)="switchState(section)">
                 <div class="{{section.subsections? 'arrow' : ''}} {{subsections[section.name]? 'down' : ''}}"></div>
-
                 {{section.name}}
             </div>
 

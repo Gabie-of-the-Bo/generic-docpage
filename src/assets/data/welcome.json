@@ -1,0 +1,11 @@
+[
+    {
+        "type": "title",
+        "content": "Basic documentation framework"
+    },
+
+    {
+        "type": "text",
+        "content": "This is some basic text"
+    }
+]
