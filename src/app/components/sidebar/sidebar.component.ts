@@ -35,12 +35,16 @@ export class SidebarComponent implements OnInit {
 		})
 	}
 
+	changeSelectedPage(file: string){
+		this.changePage.emit(file);
+	}
+
 	clickAction(section: Section){
 		if(section.subsections){
 			this.subsections[section.name] = !this.subsections[section.name];
 	
 		} else if(section.file){
-			this.changePage.emit(section.file);
+			this.changeSelectedPage(section.file)
 		}
 	}
 
