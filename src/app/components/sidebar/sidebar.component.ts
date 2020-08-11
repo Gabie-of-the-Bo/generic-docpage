@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Section } from 'src/app/model/section';
+import { JsonService } from 'src/app/services/json.service';
 
 @Component({
 	selector: 'sidebar',
@@ -14,17 +15,16 @@ export class SidebarComponent implements OnInit {
 		'border-right-style': 'solid'
 	}
 
-	sections: Section[] = [
-		new Section('About', ''),
-		new Section('Update blog', ''),
-		new Section('Downloads', ''),
-		new Section('Documentation', ''),
-		new Section('Contact', ''),
-	]
+	sections: Section[] = []
 
-	constructor() { }
+	constructor(
+		public jsonService: JsonService
+	) { }
 
 	ngOnInit(): void {
+		this.jsonService.getDocument('sections').then(data => {
+			this.sections = <Section[]>data;
+		})
 	}
 
 }
