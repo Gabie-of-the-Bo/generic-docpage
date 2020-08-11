@@ -1,4 +1,4 @@
 <div class="master-struct">
-    <sidebar></sidebar>
-    <pagebody></pagebody>
+    <sidebar (changePage)="changePage($event)"></sidebar>
+    <pagebody [segments]="segments"></pagebody>
 </div>

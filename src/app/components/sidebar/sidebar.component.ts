@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Section } from 'src/app/model/section';
 import { JsonService } from 'src/app/services/json.service';
 
@@ -18,6 +18,8 @@ export class SidebarComponent implements OnInit {
 	sections: Section[] = []
 	subsections: Map<string, boolean> = new Map();
 
+	@Output() changePage = new EventEmitter<string>();
+
 	constructor(
 		public jsonService: JsonService
 	) { }
@@ -33,12 +35,13 @@ export class SidebarComponent implements OnInit {
 		})
 	}
 
-	getArrow(section: Section){
+	clickAction(section: Section){
 		if(section.subsections){
-			return this.subsections[section.name]? "v" : ">"
+			this.subsections[section.name] = !this.subsections[section.name];
+	
+		} else if(section.file){
+			this.changePage.emit(section.file);
 		}
-
-		return '';
 	}
 
 	getSubState(section: Section){

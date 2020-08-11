@@ -1,0 +1,11 @@
+[
+    {
+        "type": "title",
+        "content": "About page"
+    },
+
+    {
+        "type": "text",
+        "content": "About this tech thingy"
+    }
+]
