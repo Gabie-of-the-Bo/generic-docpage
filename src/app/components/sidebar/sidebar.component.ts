@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
 	}
 
 	sections: Section[] = []
+	subsections: Map<string, boolean> = new Map();
 
 	constructor(
 		public jsonService: JsonService
@@ -24,7 +25,20 @@ export class SidebarComponent implements OnInit {
 	ngOnInit(): void {
 		this.jsonService.getDocument('sections').then(data => {
 			this.sections = <Section[]>data;
+			this.subsections = new Map()
+
+			for(let s of this.sections){
+				this.subsections[s.name] = false;
+			}
 		})
+	}
+
+	getSubState(section: Section){
+		return this.subsections[section.name]? "active" : "inactive";
+	}
+
+	switchState(section: Section){
+		this.subsections[section.name] = !this.subsections[section.name];
 	}
 
 }

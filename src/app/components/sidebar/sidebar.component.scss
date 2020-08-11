@@ -3,6 +3,8 @@
     width: 15vw;
 
     border-right: 1px;
+
+    overflow: hidden;
 }
 
 .pagetitle{
@@ -15,6 +17,8 @@
     font-size: 1.5em;
 
     .section{
+        width: 100%;
+
         padding-left: 1em;
         padding-top: 0.125em;
         padding-bottom: 0.125em;
@@ -24,6 +28,35 @@
         }
 
         cursor: pointer;
+
+        transition: background 0.1s;
+
+        .arrow{
+            display: inline;
+            left: -1em;
+        }
+    }
+
+    .subsections{
+        transition: opacity 0.3s;
+
+        .section{
+            font-size: 0.75em;
+    
+            padding-top: 0.125em;
+            padding-left: 2em;
+        }
+
+        &.active{ 
+            opacity: 1;
+        }
+        
+        &.inactive{ 
+            position: absolute;
+            z-index: -10000;
+
+            opacity: 0;
+        }
     }
 
     user-select: none;

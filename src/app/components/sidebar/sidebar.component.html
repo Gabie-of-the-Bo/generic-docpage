@@ -3,8 +3,16 @@
 
     </div>
     <div class="sections">
-        <div *ngFor="let section of sections" class="section">
-            {{section.name}}
+        <div *ngFor="let section of sections">
+            <div class="section" (click)="switchState(section)">
+                {{section.name}}
+            </div>
+
+            <div *ngIf="section.sections" class="subsections {{getSubState(section)}}">
+                <div class="section" *ngFor="let subsection of section.sections">
+                    {{subsection.name}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
