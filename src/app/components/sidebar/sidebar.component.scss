@@ -17,11 +17,8 @@
     font-size: 1.5em;
 
     .section{
-        width: 100%;
-
-        padding-left: 1em;
-        padding-top: 0.125em;
-        padding-bottom: 0.125em;
+        display: grid;
+        grid-template-columns: 1em auto;
 
         &:hover{
             background: lightseagreen;
@@ -32,8 +29,25 @@
         transition: background 0.1s;
 
         .arrow{
-            display: inline;
-            left: -1em;
+            justify-self: center;
+
+            &:not(.down){    
+                transform: translate(-0.1em, -0.4em);
+                align-self: center;
+            }
+        }
+
+        .arrow::before {
+            position: absolute;
+            content: '';
+            border: .4em solid transparent;
+            border-radius: 0.2em;
+            border-left-color: darkslategray;
+            transform-origin: 0 50%;
+        }
+
+        .arrow.down::before {
+            transform: rotate(90deg);
         }
     }
 
@@ -44,7 +58,7 @@
             font-size: 0.75em;
     
             padding-top: 0.125em;
-            padding-left: 2em;
+            padding-left: 1em;
         }
 
         &.active{ 

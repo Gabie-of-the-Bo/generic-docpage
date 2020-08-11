@@ -5,11 +5,14 @@
     <div class="sections">
         <div *ngFor="let section of sections">
             <div class="section" (click)="switchState(section)">
+                <div class="{{section.subsections? 'arrow' : ''}} {{subsections[section.name]? 'down' : ''}}"></div>
+
                 {{section.name}}
             </div>
 
-            <div *ngIf="section.sections" class="subsections {{getSubState(section)}}">
-                <div class="section" *ngFor="let subsection of section.sections">
+            <div *ngIf="section.subsections" class="subsections {{getSubState(section)}}">
+                <div class="section" *ngFor="let subsection of section.subsections">
+                    <div></div>
                     {{subsection.name}}
                 </div>
             </div>

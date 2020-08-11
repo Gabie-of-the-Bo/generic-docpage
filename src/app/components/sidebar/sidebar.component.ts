@@ -33,6 +33,14 @@ export class SidebarComponent implements OnInit {
 		})
 	}
 
+	getArrow(section: Section){
+		if(section.subsections){
+			return this.subsections[section.name]? "v" : ">"
+		}
+
+		return '';
+	}
+
 	getSubState(section: Section){
 		return this.subsections[section.name]? "active" : "inactive";
 	}
