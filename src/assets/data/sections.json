@@ -5,11 +5,11 @@
     },
     {
         "name": "Update blog",
-        "file": ""
+        "file": "content/updates"
     },
     {
         "name": "Downloads",
-        "file": ""
+        "file": "content/downloads"
     },
     {
         "name": "Documentation",
