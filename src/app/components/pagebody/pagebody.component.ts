@@ -10,6 +10,10 @@ import { Segment } from 'src/app/model/segment';
 export class PagebodyComponent implements OnInit {
 
 	color = {
+		'background': 'darkgray'
+	}
+
+	colorContent = {
 		'background': 'lightyellow'
 	}
 

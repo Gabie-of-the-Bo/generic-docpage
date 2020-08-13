@@ -1,5 +1,7 @@
 <div class="pagebody" [ngStyle]="color">
-    <div class="segment" *ngFor="let segment of segments">
-        <segment [segment]="segment"></segment>
+    <div class="pagecontent" [ngStyle]="colorContent">
+        <div class="segment" *ngFor="let segment of segments">
+            <segment [segment]="segment"></segment>
+        </div>
     </div>
 </div>

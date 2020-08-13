@@ -11,7 +11,7 @@ export class SidebarComponent implements OnInit {
 
 	color = {
 		'background': 'teal',
-		'border-right-color': 'gray',
+		'border-right-color': 'teal',
 		'border-right-style': 'solid'
 	}
 
