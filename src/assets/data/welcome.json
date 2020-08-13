@@ -12,5 +12,15 @@
     {
         "type": "text",
         "content": "This is some basic text"
+    },
+
+    {
+        "type": "subtitle",
+        "content": "This supports Katex somehow"
+    },
+
+    {
+        "type": "latex",
+        "content": "y=\\lim_{i \\to \\infty}{{\\frac{x_i^2}{\\sqrt{x_{i+1}}}}}"
     }
 ]
