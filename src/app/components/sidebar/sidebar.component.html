@@ -4,7 +4,7 @@
     </div>
     <div class="sections">
         <div *ngFor="let section of sections">
-            <div class="section" (click)="clickAction(section)">
+            <div class="section {{getSubState(section)}}" (click)="clickAction(section)">
                 <div class="{{section.subsections? 'arrow' : ''}} {{subsections[section.name]? 'down' : ''}}"></div>
                 {{section.name}}
             </div>
@@ -16,5 +16,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        Example license™
     </div>
 </div>
