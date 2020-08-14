@@ -9,6 +9,7 @@ import { JsonService } from './services/json.service';
 })
 export class AppComponent implements OnInit{
 	loading: boolean = true;
+	page: number = 1;
 	segments: Segment[] = [];
 
 	constructor(
