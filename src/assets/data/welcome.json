@@ -31,7 +31,7 @@
 
     {
         "type": "code",
-        "language": "Python",
-        "content": "x = [i for i in range(50)]"
+        "language": "python",
+        "content": "def movements0Cell(img, p):\n   p = np.array(p)\n   increments = (([0, 0], [1, 0]), ([0, 0], [0, 1]), ([1, 1], [1, 0]), ([1, 1], [0, 1]))\n   movements = [(p + i, p + j) for i, j in increments]\n\n   for p1, p2 in movements:\n      if bounded(img, p1) and bounded(img, p2) and img[p1[1], p1[0]] != img[p2[1], p2[0]]:\n         yield sort1Cell((tuple(p1), tuple(p2)))"
     }
 ]

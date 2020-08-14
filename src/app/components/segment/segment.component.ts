@@ -6,6 +6,7 @@ import { KatexOptions } from 'ng-katex';
 	Import your Ace Editor modes here
 */
 import 'brace/mode/python';
+import 'brace/mode/haskell';
 
 @Component({
 	selector: 'segment',
@@ -18,7 +19,6 @@ export class SegmentComponent implements OnInit {
 
 	options: KatexOptions = {
 		displayMode: true,
-		
 	};
 
 	constructor() { }
