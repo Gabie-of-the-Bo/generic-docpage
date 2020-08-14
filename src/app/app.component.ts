@@ -8,6 +8,7 @@ import { JsonService } from './services/json.service';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+	loading: boolean = true;
 	segments: Segment[] = [];
 
 	constructor(
@@ -19,8 +20,17 @@ export class AppComponent implements OnInit{
 	}
 
 	changePage(name: string){
-		this.jsonService.getDocument(name).then(data => {
-			this.segments = <Segment[]>data;
-		})
+		this.loading = true;
+
+		setTimeout(() => {
+			this.jsonService.getDocument(name).then(data => {
+				this.segments = <Segment[]>data;
+				this.loading = false;
+			
+			}).catch(() => {
+				this.loading = false;
+			})
+
+		}, Math.floor(Math.random() * (750 - 500 + 1)) + 500)
 	}
 }

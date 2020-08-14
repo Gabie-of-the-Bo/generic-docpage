@@ -9,6 +9,8 @@ import { Segment } from 'src/app/model/segment';
 })
 export class PagebodyComponent implements OnInit {
 
+	@Input() loading: boolean;
+
 	color = {
 	}
 

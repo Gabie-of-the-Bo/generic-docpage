@@ -1,7 +1,12 @@
 <div class="pagebody" [ngStyle]="color">
     <div class="pagecontent" [ngStyle]="colorContent">
-        <div class="segment" *ngFor="let segment of segments">
-            <segment [segment]="segment"></segment>
-        </div>
+        <ng-container *ngIf="!loading">
+            <div class="segment" *ngFor="let segment of segments">
+                <segment [segment]="segment"></segment>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="loading">
+            <div class="loader"></div>
+        </ng-container>
     </div>
 </div>
