@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { KatexModule } from 'ng-katex';
+import { AceEditorModule } from 'ng2-ace-editor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { SegmentComponent } from './components/segment/segment.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    KatexModule
+	KatexModule,
+	AceEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

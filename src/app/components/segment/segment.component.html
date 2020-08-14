@@ -2,3 +2,4 @@
 <h2 *ngIf="segment.type == 'subtitle'">{{segment.content}}</h2>
 <p *ngIf="segment.type == 'text'">{{segment.content}}</p>
 <ng-katex *ngIf="segment.type == 'latex'" [equation]="segment.content" [options]="options"></ng-katex>
+<ace-editor #WEA *ngIf="segment.type == 'code'" mode="python" [text]="segment.content" [readOnly]="true"></ace-editor>

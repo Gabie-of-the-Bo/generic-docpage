@@ -22,5 +22,16 @@
     {
         "type": "latex",
         "content": "y=\\lim_{i \\to \\infty}{{\\frac{x_i^2}{\\sqrt{x_{i+1}}}}}"
+    },
+
+    {
+        "type": "subtitle",
+        "content": "And even code snippets"
+    },
+
+    {
+        "type": "code",
+        "language": "Python",
+        "content": "x = [i for i in range(50)]"
     }
 ]
