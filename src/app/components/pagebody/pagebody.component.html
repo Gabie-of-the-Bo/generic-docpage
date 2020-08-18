@@ -13,7 +13,7 @@
             <div class="pages">
                 <div *ngIf="page <= 1" class="prev disabled">◄</div>
                 <div *ngIf="page > 1" class="prev" (click)="changePageIncrement(-1)">◄</div>
-                <div class="pagetext">Page {{page}}</div>
+                <div class="pagetext">Page {{page}} of {{maxpage}}</div>
                 <div *ngIf="page >= maxpage" class="next disabled">►</div>
                 <div *ngIf="page < maxpage" class="next" (click)="changePageIncrement(1)">►</div>
             </div>
