@@ -8,5 +8,15 @@
         <ng-container *ngIf="loading">
             <div class="loader"></div>
         </ng-container>
+
+        <ng-container *ngIf="paged">
+            <div class="pages">
+                <div *ngIf="page <= 1" class="prev disabled">◄</div>
+                <div *ngIf="page > 1" class="prev" (click)="changePageIncrement(-1)">◄</div>
+                <div class="pagetext">Page {{page}}</div>
+                <div *ngIf="page >= maxpage" class="next disabled">►</div>
+                <div *ngIf="page < maxpage" class="next" (click)="changePageIncrement(1)">►</div>
+            </div>
+        </ng-container>
     </div>
 </div>

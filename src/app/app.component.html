@@ -1,4 +1,4 @@
 <div class="master-struct">
     <sidebar (changePage)="changePage($event)"></sidebar>
-    <pagebody [segments]="segments" [loading]="loading"></pagebody>
+    <pagebody [segments]="segments" [loading]="loading" [page]="page" [maxpage]="maxpage" [paged]="paged" (changePage)="changeSelectedPage($event)"></pagebody>
 </div>

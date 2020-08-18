@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { JsonService } from 'src/app/services/json.service';
 import { Segment } from 'src/app/model/segment';
 
@@ -9,7 +9,14 @@ import { Segment } from 'src/app/model/segment';
 })
 export class PagebodyComponent implements OnInit {
 
+	@Input() segments: Segment[] = []; 
+
 	@Input() loading: boolean;
+	@Input() paged: boolean;
+	@Input() page: number;
+	@Input() maxpage: number;
+
+	@Output() changePage: EventEmitter<number> = new EventEmitter();
 
 	color = {
 	}
@@ -18,12 +25,14 @@ export class PagebodyComponent implements OnInit {
 		'background': 'lightyellow'
 	}
 
-	@Input() segments: Segment[] = []; 
-
 	constructor(
 		public jsonService: JsonService
 	) { }
 
 	ngOnInit(): void {}
+
+	changePageIncrement(inc: number){
+		this.changePage.emit(inc);
+	}
 
 }

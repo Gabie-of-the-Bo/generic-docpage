@@ -8,9 +8,41 @@
 
 .pagecontent{
     height: 100vh;
-    width: 60%;
+    width: 50vw;
 
     padding: 2em;
+}
+
+.pages{
+    display: grid;
+    grid-template-columns: 1em auto 1em;
+
+    width: fit-content;
+    
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.25em;
+
+    border: 1px solid gray;
+    border-radius: 0.25em;
+    
+    .pagetext{
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .prev, .next{
+        &:not(.disabled){
+            cursor: pointer;
+        }
+
+        &.disabled{
+            color: gray;
+        }
+    }
+
+    user-select: none;
 }
 
 .loader, .loader:before, .loader:after {
