@@ -45,5 +45,12 @@
         "type": "text",
         "content": "I don't even know how this thing is held together anymore...",
         "page": 2
+    },
+
+    {
+        "type": "text",
+        "content": "Apparently, you can even use inline CSS code.",
+        "inline_css": "color: red; font-weight: bold;",
+        "page": 2
     }
 ]
